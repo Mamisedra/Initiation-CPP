@@ -6,13 +6,15 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:24:44 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/16 11:26:29 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:42:44 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
+#include <exception>
 #include <iostream>
 #include <iomanip>
+#include <stdexcept>
 #include <string>
 
 int PhoneBook::_index = 0;
@@ -90,20 +92,43 @@ void	PhoneBook::_show_contact(int index) const
 	}
 }
 
+int	get_index(std::string input)
+{
+	int	index;
+
+	index = 0;
+	for (char c : input)
+	{
+		if (index > 8)
+			return (-1);
+		index *= 10;
+		index += c - '0';
+	}
+	return (index);
+}
+
 void	PhoneBook::search_contact( void ) const
 {
 	int			index;
 	std::string	input;
+	bool		test;
 
 	index = 0;
+	test = false;
 	this->_show_contact(-1);
 	std::cout << "Enter an integer between 1 and 8: ";
 	while (1)
 	{
+		if (test)
+		{
+			std::cout << "\033[3;31m Error \033[0m" <<"Input must be an ";
+			std::cout << "integer between 1 and 8."<< std::endl;
+			std::cout << "Please verify your input : ";
+		}
+		test = true ;
 		std::getline(std::cin, input);
-
 		if (!input.empty() && is_all_digit(input))
-			index = std::stoi(input);
+			index = get_index(input);
 		if (index >= 1 && index <= 8)
 		{
 			if (index > this->_index)
@@ -115,9 +140,6 @@ void	PhoneBook::search_contact( void ) const
 				this->_show_contact(index);
 			return ;
 		}
-		std::cout << "\033[3;31m Error \033[0m" <<"Input must be an ";
-		std::cout << "integer between 1 and 8."<< std::endl;
-		std::cout << "Please verify your input : ";
 	}
 }
 

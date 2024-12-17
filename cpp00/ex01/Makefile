@@ -7,7 +7,7 @@ RM = rm -rf
 
 all:${NAME}
 
-.c.o:
+.cpp.o:
 	${CPP} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 ${NAME}: ${OBJS}
@@ -21,4 +21,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re all clean fclean phonebooks
+.PHONY: re all clean fclean

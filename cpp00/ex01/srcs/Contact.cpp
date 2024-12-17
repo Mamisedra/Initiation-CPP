@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:27:46 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/16 11:23:15 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:58:17 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ std::string	Contact::get_name(int i) const
 void	Contact::_set_first_name()
 {
 	std::string	name;
+
 	while (1)
 	{
 		std::cout << "Enter a first name (required): ";
-		std:std::getline(std::cin, name);
+		std::getline(std::cin, name);
 		if (!name.empty())
 			break ;
 	}
@@ -57,7 +58,7 @@ void	Contact::_set_last_name()
 	while (1)
 	{
 		std::cout << "Enter a last name (required): ";
-		std:std::getline(std::cin, name);
+		std::getline(std::cin, name);
 		if (!name.empty())
 			break ;
 	}
@@ -69,7 +70,7 @@ void	Contact::_set_nick_name()
 	std::string	name;
 
 	std::cout << "Enter a nick name : ";
-	std:std::getline(std::cin, name);
+	std::getline(std::cin, name);
 	this->_nick_name = name;
 }
 
@@ -86,17 +87,15 @@ static bool	is_all_digit(std::string str)
 void	Contact::_set_phone_nbr()
 {
 	std::string	nbr;
-	int			number;
 	
 	while (1)
 	{
 		std::cout << "Enter a phone nbr (required): ";
-		std:std::getline(std::cin, nbr);
+		std::getline(std::cin, nbr);
 		if (!nbr.empty() && is_all_digit(nbr))
 			break ;
 	}
-	number = std::stoi(nbr);
-	this->_phone_nbr = number;
+	this->_phone_nbr = nbr;
 }
 
 void	Contact::_set_dark_secret()
@@ -104,7 +103,7 @@ void	Contact::_set_dark_secret()
 	std::string	name;
 
 	std::cout << "Enter a dark secret : ";
-	std:std::getline(std::cin, name);
+	std::getline(std::cin, name);
 	this->_dark_secret = name;
 }
 

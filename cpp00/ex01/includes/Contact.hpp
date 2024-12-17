@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:22:53 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/16 11:24:00 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:57:01 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Contact
 		std::string	_first_name;
 		std::string	_last_name;
 		std::string	_nick_name;
-		int			_phone_nbr;
+		std::string	_phone_nbr;
 		std::string	_dark_secret;
 		void		_set_first_name( void );
 		void		_set_last_name( void );

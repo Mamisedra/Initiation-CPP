@@ -6,11 +6,10 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:06:24 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/13 11:30:55 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:48:33 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cctype>
 #include <iostream>
 
 void	str_toupper(char *str)

@@ -1,13 +1,13 @@
 NAME = zombie
 CPP = g++
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = srcs/main.cpp srcs/Zombie.cpp srcs/newZombie.cpp srcs/randomChump.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 
 all:${NAME}
 
-.c.o:
+.cpp.o:
 	${CPP} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 ${NAME}: ${OBJS}
@@ -16,9 +16,9 @@ ${NAME}: ${OBJS}
 clean:
 	@${RM} ${OBJS}
 
-fclean:
+fclean: clean
 	@${RM} ${NAME}
 
 re: fclean all
 
-.PHONY: re all clean fclean zombie
+.PHONY: re all clean fclean

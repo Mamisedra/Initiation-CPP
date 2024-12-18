@@ -1,17 +1,17 @@
 NAME = megaphone
-CPP = c++
+CPP = g++
 FLAGS = -Wall -Wextra -Werror
 SRCS = megaphone.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 
-all:${NAME}
-
-.c.o:
+%.o: %.cpp
 	${CPP} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
+all:${NAME}
+
 ${NAME}: ${OBJS}
-	${CPP} ${OBJS} -o ${NAME}
+	${CPP} ${FLAGS} ${OBJS} -o ${NAME}
 
 clean:
 	@${RM} ${OBJS} 
@@ -21,4 +21,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re all clean fclean megaphone
+.PHONY: re all clean fclean

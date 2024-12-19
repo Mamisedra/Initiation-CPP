@@ -6,27 +6,22 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:24:44 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/17 15:47:47 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/19 10:55:31 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
-#include <exception>
-#include <iostream>
-#include <iomanip>
-#include <stdexcept>
-#include <string>
 
 int PhoneBook::_index = 0;
 int PhoneBook::_print = 0;
 
 static bool	is_all_digit(std::string str)
 {
-	for (char s : str)
+	for (int i = 0; (size_t)i < str.length(); i++)
 	{
-		if (!std::isdigit(s))
+		if (!std::isdigit(str[i]))
 			return (false);
-	}
+	} 
 	return (true);
 }
 
@@ -82,13 +77,11 @@ void	PhoneBook::_show_contact(int index) const
 	}
 	else
 	{
-		line_none(1);
-		std::cout << "|" << std::setw(10) << index  << "|";
-		std::cout << std::setw(10) << this->print_trucated(this->_contact[index - 1].get_name(1)) << "|";
-		std::cout << std::setw(10) << this->print_trucated(this->_contact[index - 1].get_name(2)) << "|";
-		std::cout << std::setw(10) << this->print_trucated(this->_contact[index - 1].get_name(3)) << "|";
-		std::cout << std::endl;
-		line_none(0);
+		std::cout << "> First Name\t: " << _contact[index - 1].get_name(1) << std::endl;
+		std::cout << "> Last Name\t: "<< _contact[index - 1].get_name(2) << std::endl;
+		std::cout << "> Nick Name\t: "<< _contact[index - 1].get_name(3)<< std::endl;
+		std::cout << "> Phone Number\t: "<< _contact[index - 1].getPhone_nbr()<< std::endl;
+		std::cout << "> Dark secret\t: "<< _contact[index - 1].getDark_secret()<< std::endl;
 	}
 }
 
@@ -97,12 +90,12 @@ int	get_index(std::string input)
 	int	index;
 
 	index = 0;
-	for (char c : input)
+	for (int i = 0; (size_t)i < input.length(); i++)
 	{
 		if (index > 8)
 			return (-1);
 		index *= 10;
-		index += c - '0';
+		index += input[i] - '0';
 	}
 	return (index);
 }

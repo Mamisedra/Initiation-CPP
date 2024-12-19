@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:27:46 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/17 14:58:17 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/19 09:47:22 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ Contact::Contact( void )
 Contact::~Contact( void )
 {
 	return ;
+}
+
+std::string	Contact::getPhone_nbr() const
+{
+	return (this->_phone_nbr);
+}
+
+std::string	Contact::getDark_secret() const
+{
+	return (this->_dark_secret);
 }
 
 std::string	Contact::get_name(int i) const
@@ -76,11 +86,11 @@ void	Contact::_set_nick_name()
 
 static bool	is_all_digit(std::string str)
 {
-	for (char s : str)
+	for (int i = 0; (size_t)i < str.length(); i++)
 	{
-		if (!std::isdigit(s))
+		if (!std::isdigit(str[i]))
 			return (false);
-	}
+	} 
 	return (true);
 }
 

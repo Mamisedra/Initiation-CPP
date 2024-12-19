@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:22:53 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/17 14:57:01 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/19 10:55:53 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __CONTACT_H__
 
 # include <iostream>
+#include <iomanip>
 # include <string>
 
 class Contact
@@ -23,6 +24,8 @@ class Contact
 		Contact 	( void );
 		~Contact 	( void );
 		std::string	get_name(int i) const;
+		std::string	getPhone_nbr() const;
+		std::string getDark_secret() const;
 		void		new_contact( void );
 
 	private:

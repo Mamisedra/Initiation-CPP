@@ -6,50 +6,60 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:55:46 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/19 14:10:54 by mranaivo         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:56:06 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstddef>
-#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <ostream>
 #include <string>
+#include <cstring>
 
-char	*file_cat_replace(char* str)
+static void	ft_do\
+(std::ofstream& output, std::string tfind, std::string treplace)
 {
-	return (strcat(str, ".replace"));
+	(void)treplace;
+	(void)tfind;
+	(void)output;
 }
 
-static std::string	line_replace(std::string line, std::string to_find, std::string to_replace)
+int	make_copy_and_replace\
+(char *infile, char *outfile, char *tfind, char *treplace)
 {
-	std::string	nline;
-	size_t		pos;
-	size_t		found;
+	std::ifstream	inputfile;
+	std::ofstream	outputfile;
+	std::string		line;
 
-	nline = "";
-	pos = 0;
-	while (pos < line.length())
+	inputfile.open(infile, std::fstream::in);
+	if (inputfile)
 	{
-		found = line.find(to_find, pos);
-		if (found == std::string::npos)
+		outputfile.open(outfile, std::fstream::out);
+		if (!outputfile)
+			return (inputfile.close(), outputfile.close(), 0);
+		while (!inputfile.eof())
 		{
-			nline += line.substr(pos);
-			break ;
+			std::getline(inputfile, line);
+			ft_do(outputfile, tfind, treplace);
+			if (inputfile.eof())
+				break ;
+			outputfile << std::endl;
 		}
-		nline += line.substr(0, found - pos);
-		nline += to_replace;
-		pos = found + to_find.length();
 	}
-	return (nline);
+	else
+	{
+		std::cerr << "Failed to open files!" << std::endl;
+		return (inputfile.close(), outputfile.close(), 0);
+	}
+	inputfile.close();
+	outputfile.close();
+	return (1);
 }
 
 int	main(int argc, char *argv[])
 {
 	std::string	line;
-	std::string	to_find;
-	std::string	to_replace;
+	char	*outfile;
 
 	if (argc < 3)
 	{
@@ -57,25 +67,8 @@ int	main(int argc, char *argv[])
 					<< "\tReplace the string s1 with the string s2 in the filename." << std::endl;
 		return (1);
 	}
-	to_find = argv[2];
-	to_replace = argv[3];
-    std::ifstream sfile(argv[1], std::ios::in);
-	if (sfile.is_open())
-	{
-		std::ofstream file(file_cat_replace(argv[1]), std::ios::out);
-		while (!sfile.eof())
-		{
-			std::getline(sfile, line);
-			file << line_replace(line, to_find, to_replace);
-			if (!sfile.eof())
-				file << std::endl;
-		}
-		sfile.close();
-		file.close();
-	}
-	else
-	{
-		std::cout << "Unable to open "<< argv[1] << "." << std::endl;
-	}
+	outfile = strcat(argv[1], ".replace");
+	if (!make_copy_and_replace(argv[1], outfile, argv[2], argv[3]))
+		return (1);
 	return (0);
 }

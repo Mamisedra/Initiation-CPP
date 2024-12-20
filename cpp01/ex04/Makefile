@@ -1,7 +1,7 @@
 NAME = sed_is_for_losers
 CPP = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = srcs/main.cpp
+SRCS = srcs/main.cpp srcs/MySed.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 

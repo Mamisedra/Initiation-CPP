@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:55:46 by mranaivo          #+#    #+#             */
-/*   Updated: 2024/12/20 16:40:51 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/13 11:38:30 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 #include <fstream>
 
 static void	ft_do\
-(MySed *mysed, char *argv1, char *name)
+(MySed *mysed, char *argv1)
 {
 	std::ifstream	inputfile;
 	std::ofstream	outputfile;
 	std::string		line;
 
-	(void)name;
-	inputfile.open(argv1, std::ios::in);
+	inputfile.open(argv1);
+
 	if (inputfile.is_open())
 	{
-		outputfile.open("replace", std::ios::out);
+		strcat(argv1, ".replace");
+		outputfile.open(argv1);
 		if (outputfile.is_open())
 		{
 			std::getline(inputfile, line, '\0');
 			mysed->setline(line);
 			mysed->replace();
 			mysed->rewrite(outputfile);
+			outputfile.close();
 		}
-		outputfile.close();
+		inputfile.close();
 	}
-	inputfile.close();
 }
 
 int	main(int argc, char *argv[])
 {
 	MySed	*mysed;
-	char	*name;
 
 	if (argc < 3)
 	{
@@ -48,9 +48,11 @@ int	main(int argc, char *argv[])
 					<< "\tReplace the string s1 with the string s2 in the filename." << std::endl;
 		return (1);
 	}
-	name = strcat(argv[1], ".replace");
+	std::cout << "1" << argv[1] << std::endl
+		<< "2 - "<< argv[2] << std::endl
+		<< "3 - " << argv[3]<< std::endl;
 	mysed = new MySed(argv[2], argv[3]);
-	ft_do(mysed, argv[1], name);
+	ft_do(mysed, argv[1]);
 	delete mysed;
 	return (0);
 }

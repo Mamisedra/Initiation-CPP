@@ -1,7 +1,7 @@
 NAME = BSP
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS =
+SRCS = srcs/main.cpp srcs/Fixed.cpp srcs/Point.cpp srcs/bsp.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 

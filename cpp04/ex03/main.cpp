@@ -5,30 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 13:52:23 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 14:22:40 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "header.hpp"
+#include "AMateria.hpp"
 
 int	main( void )
 {
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+	IMateriaSource*	src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
+	ICharacter	*me = new Character("me");
 
-	delete minou;
-	delete roxy;
+	AMateria	*tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	ICharacter	*bob = new Character("bob");
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
 
 	return (0);
 }

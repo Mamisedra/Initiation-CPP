@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 14:57:15 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 15:36:19 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "header.hpp"
+#ifndef __HEADER_HPP__
+# define __HEADER_HPP__
 
-int	main( void )
-{
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+# pragma once
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
+# include <iostream>
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
+# include "Ice.hpp"
+# include "Cure.hpp"
 
-	delete minou;
-	delete roxy;
-
-	return (0);
-}
+#endif

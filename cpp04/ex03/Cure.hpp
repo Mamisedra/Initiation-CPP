@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 15:41:28 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 15:45:15 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "header.hpp"
+#ifndef __CURE_HPP__
+# define __CURE_HPP__
 
-int	main( void )
+# pragma once
+
+# include "header.hpp"
+
+class	Cure : public AMateria
 {
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+	public:
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
+		Cure( void );
+		Cure( const Cure & other );
+		Cure	&operator=( const Cure & other );
+		~Cure( void );
+		AMateria	*clone( void ) const;
 
-	delete minou;
-	delete roxy;
+	private :
+};
 
-	return (0);
-}
+#endif

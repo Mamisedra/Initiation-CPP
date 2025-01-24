@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 15:51:20 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 15:56:05 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef __MATERIASOURCE_HPP__
+# define __MATERIASOURCE_HPP__
+
+#include "AMateria.hpp"
+# pragma once
+
 #include "header.hpp"
 
-int	main( void )
+class	MateriaSource : public IMateriaSource
 {
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+	public:
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
-
-	delete minou;
-	delete roxy;
-
-	return (0);
-}
+		MateriaSource( void );
+		~MateriaSource( void );
+		MateriaSource( const MateriaSource & other );
+		MateriaSource	&operator=( const MateriaSource & other );
+		void			learnMateria( AMateria * other);
+		AMateria		*createMateria( std::string const & type );
+};
+#endif

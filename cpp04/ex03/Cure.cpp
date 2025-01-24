@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 15:45:19 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 15:49:48 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Cure.hpp"
+#include "AMateria.hpp"
 #include "header.hpp"
 
-int	main( void )
+Cure::Cure( void )
 {
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+	this->type_ = "cure";
+	return ;
+}
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
+Cure::~Cure( void )
+{
+	return ;
+}
 
-	delete minou;
-	delete roxy;
+Cure	&Cure::operator=( const Cure & other )
+{
+	AMateria::operator=(other);
+	this->type_ = other.type_;
+	return (*this);
+}
 
-	return (0);
+Cure::Cure( const Cure & other ) : AMateria(other)
+{
+	*this = other;
+}
+
+AMateria	*Cure::clone( void ) const
+{
+	return (new Cure());
 }

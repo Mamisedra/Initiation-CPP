@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 15:34:04 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 15:47:59 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 #include "header.hpp"
 
-int	main( void )
+Ice::Ice( void )
 {
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+	this->type_ = "ice";
+	return ;
+}
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
+Ice::~Ice( void )
+{
+	return ;
+}
 
-	delete minou;
-	delete roxy;
+Ice	&Ice::operator=( const Ice & other )
+{
+	AMateria::operator=(other);
+	this->type_ = other.type_;
+	return (*this);
+}
 
-	return (0);
+Ice::Ice( const Ice & other ) : AMateria(other)
+{
+	*this = other;
+}
+
+AMateria	*Ice::clone( void ) const
+{
+	return (new Ice());
 }

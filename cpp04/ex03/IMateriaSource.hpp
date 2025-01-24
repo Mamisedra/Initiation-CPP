@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 14:31:35 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 14:38:39 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 15:01:47 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "header.hpp"
+#ifndef __IMATERIASOURCE_HPP__
+# define __IMATERIASOURCE_HPP__
 
-int	main( void )
+# pragma once
+# include "header.hpp"
+
+class	IMateriaSource
 {
-	const Cat	cat = Cat();
-	const Cat*	minou = new Cat();
-	const Dog	dog = Dog();
-	const Dog*	roxy = new Dog();
+	public:
 
-	cat.makeSound();
-	roxy->getType();
-	dog.makeSound();
-	minou->getType();
+		virtual ~IMateriaSource() {}
+		virtual void	learnMateria( AMateria * other) = 0;
+		virtual AMateria	*createMateria( std::string const & type ) = 0;
+};
 
-	delete minou;
-	delete roxy;
-
-	return (0);
-}
+#endif

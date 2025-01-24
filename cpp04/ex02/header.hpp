@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:23:34 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/23 17:13:10 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 09:37:22 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 13:08:03 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WRONGANIMAL_HPP__
-# define __WRONGANIMAL_HPP__
+#ifndef __HEADER_HPP__
+# define __HEADER_HPP__
 
 # pragma once
-# include <string>
 
-class	WrongAnimal
-{
-	public :
+# include <iostream>
+# include "Brain.hpp"
+# include "AAnimal.hpp"
+# include "Cat.hpp"
+# include "Dog.hpp"
 
-		WrongAnimal( void );
-		WrongAnimal( const WrongAnimal & other );
-		WrongAnimal	&operator=( const WrongAnimal & other);
-		virtual ~WrongAnimal( void );
-		void	makeSound() const;
+# undef YELLOW
+# define YELLOW "\033[1;33m"
 
-	protected:
+# undef GREEN
+# define GREEN "\033[1;32m"
 
-		std::string	type;
-};
+# undef BLUE
+# define BLUE "\033[1;34m"
+
+# undef WHITE
+# define WHITE "\033[1;37m"
+
+# undef CLEAR
+# define CLEAR "\033[0m"
 
 #endif

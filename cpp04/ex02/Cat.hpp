@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:23:34 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/23 17:13:10 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 13:00:28 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 13:15:13 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WRONGANIMAL_HPP__
-# define __WRONGANIMAL_HPP__
+#ifndef __CAT_HPP__
+# define __CAT_HPP__
 
 # pragma once
-# include <string>
+#include "AAnimal.hpp"
+# include "header.hpp"
 
-class	WrongAnimal
+class	Cat : public AAnimal
 {
 	public :
 
-		WrongAnimal( void );
-		WrongAnimal( const WrongAnimal & other );
-		WrongAnimal	&operator=( const WrongAnimal & other);
-		virtual ~WrongAnimal( void );
-		void	makeSound() const;
+		Cat( void );
+		Cat( const Cat & other );
+		Cat	&operator=( const Cat & other );
+		~Cat( void );
+		void	makeSound( void ) const;
 
-	protected:
+	private :
 
-		std::string	type;
+		Brain	*_brain;
+
 };
-
 #endif

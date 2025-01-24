@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:23:34 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/23 17:13:10 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 13:10:58 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 13:15:20 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WRONGANIMAL_HPP__
-# define __WRONGANIMAL_HPP__
+#ifndef __DOG_HPP__
+# define __DOG_HPP__
 
 # pragma once
-# include <string>
+# include "header.hpp"
 
-class	WrongAnimal
+class	Dog : public AAnimal
 {
 	public :
 
-		WrongAnimal( void );
-		WrongAnimal( const WrongAnimal & other );
-		WrongAnimal	&operator=( const WrongAnimal & other);
-		virtual ~WrongAnimal( void );
-		void	makeSound() const;
+		Dog( void );
+		Dog( const Dog & other );
+		Dog	&operator=( const Dog & other );
+		~Dog( void );
+		void	makeSound( void ) const;
 
-	protected:
+	private :
 
-		std::string	type;
+		Brain	*_brain;
 };
 
 #endif

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:23:34 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/23 17:13:10 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 12:24:50 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 13:22:41 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WRONGANIMAL_HPP__
-# define __WRONGANIMAL_HPP__
+#include "AAnimal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "header.hpp"
 
-# pragma once
-# include <string>
-
-class	WrongAnimal
+int	main( void )
 {
-	public :
+	const Cat	cat = Cat();
+	const Cat*	minou = new Cat();
+	const Dog	dog = Dog();
+	const Dog*	roxy = new Dog();
 
-		WrongAnimal( void );
-		WrongAnimal( const WrongAnimal & other );
-		WrongAnimal	&operator=( const WrongAnimal & other);
-		virtual ~WrongAnimal( void );
-		void	makeSound() const;
+	cat.makeSound();
+	roxy->getType();
+	dog.makeSound();
+	minou->getType();
 
-	protected:
+	delete minou;
+	delete roxy;
 
-		std::string	type;
-};
-
-#endif
+	return (0);
+}

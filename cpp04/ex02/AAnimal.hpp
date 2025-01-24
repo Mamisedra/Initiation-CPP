@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:23:34 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/23 17:13:10 by mranaivo         ###   ########.fr       */
+/*   Created: 2025/01/24 12:34:16 by mranaivo          #+#    #+#             */
+/*   Updated: 2025/01/24 12:55:54 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WRONGANIMAL_HPP__
-# define __WRONGANIMAL_HPP__
+#ifndef __AANIMAL_HPP__
+# define __AANIMAL_HPP__
 
+#include <string>
 # pragma once
-# include <string>
 
-class	WrongAnimal
+class	AAnimal
 {
 	public :
 
-		WrongAnimal( void );
-		WrongAnimal( const WrongAnimal & other );
-		WrongAnimal	&operator=( const WrongAnimal & other);
-		virtual ~WrongAnimal( void );
-		void	makeSound() const;
+		AAnimal( void );
+		AAnimal( const AAnimal & other );
+		AAnimal	&operator=( const AAnimal & other );
+		virtual ~AAnimal( void );
+		virtual void	makeSound( void ) const = 0;
+		std::string		getType( void ) const;
 
-	protected:
+	protected :
 
-		std::string	type;
+		std::string	type_;
+
+	private :
 };
 
 #endif

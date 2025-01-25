@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 14:38:39 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 15:01:47 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/25 11:04:10 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	IMateriaSource
 	public:
 
 		virtual ~IMateriaSource() {}
-		virtual void	learnMateria( AMateria * other) = 0;
+		virtual void		learnMateria( AMateria * other) = 0;
 		virtual AMateria	*createMateria( std::string const & type ) = 0;
 };
 

@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:55:33 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 15:14:05 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/25 11:06:06 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string>
 # include "header.hpp"
 
+class	ICharacter;
 class	AMateria
 {
 	public:

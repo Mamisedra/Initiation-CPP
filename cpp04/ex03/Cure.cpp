@@ -6,12 +6,10 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:45:19 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 15:49:48 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/25 10:17:48 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
-#include "AMateria.hpp"
 #include "header.hpp"
 
 Cure::Cure( void )
@@ -40,4 +38,10 @@ Cure::Cure( const Cure & other ) : AMateria(other)
 AMateria	*Cure::clone( void ) const
 {
 	return (new Cure());
+}
+
+void	Cure::use( ICharacter & target )
+{
+	std::cout << "* heals " << target.getName()
+		<< "'s wounds *" << std::endl;
 }

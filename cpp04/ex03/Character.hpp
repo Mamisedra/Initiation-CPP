@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:56:58 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 16:09:39 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/25 11:05:00 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ class	Character : public ICharacter
 	public:
 
 		Character( void );
-		Character( std::string name );
+		Character( const std::string &name );
 		~Character( void );
 		Character( const Character & other );
 		Character			&operator=( const Character & other );
-		void				equip( AMateria *m);
+		std::string const &	getName() const;
+		void				equip( AMateria *m );
 		void				unequip( int idx );
 		void				use( int idx, ICharacter &target );
-		std::string const &	getName() const;
 
 	private :
 
 		std::string	_name;
+		AMateria	*_inventaire[4];
 };
+
 #endif

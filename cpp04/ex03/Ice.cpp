@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:34:04 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/24 15:47:59 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/25 09:11:33 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ Ice::Ice( const Ice & other ) : AMateria(other)
 AMateria	*Ice::clone( void ) const
 {
 	return (new Ice());
+}
+
+void	Ice::use( ICharacter & target )
+{
+	std::cout << "* shoots an ice bolt at "
+		<< target.getName() << " *"
+		<< std::endl;
 }

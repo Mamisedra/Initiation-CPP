@@ -1,7 +1,7 @@
-NAME = GlobalBanksters
-CPP = g++
-FLAGS = -Wall -Wextra -Werror
-SRCS = tests.cpp Account.cpp
+NAME = zombieHorde
+CPP = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = srcs/main.cpp srcs/Zombie.cpp srcs/zombieHorde.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 
@@ -14,11 +14,11 @@ ${NAME}: ${OBJS}
 	${CPP} ${OBJS} -o ${NAME}
 
 clean:
-	@${RM} ${OBJS} 
+	@${RM} ${OBJS}
 
 fclean: clean
 	@${RM} ${NAME}
 
 re: fclean all
 
-.PHONY: re all clean fclean
+.PHONY: re all clean fclean zombieHorde

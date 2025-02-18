@@ -1,7 +1,7 @@
 NAME = Serena,my_love!
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS =
+SRCS = ClapTrap/srcs/ClapTrap.cpp srcs/ScavTrap.cpp main.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 

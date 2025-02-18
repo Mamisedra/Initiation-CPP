@@ -1,0 +1,24 @@
+ = sed_is_for_losers
+CPP = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = srcs/main.cpp srcs/MySed.cpp
+OBJS = ${SRCS:.cpp=.o}
+RM = rm -rf
+
+all:${}
+
+.cpp.o:
+	${CPP} ${FLAGS} -c $< -o ${<:.cpp=.o}
+
+${}: ${OBJS}
+	${CPP} ${OBJS} -o ${}
+
+clean:
+	@${RM} ${OBJS}
+
+fclean: clean
+	@${RM} ${}
+
+re: fclean all
+
+.PHONY: re all clean fclean

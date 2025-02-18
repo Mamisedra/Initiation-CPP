@@ -1,7 +1,8 @@
 NAME = Now_its_weird!
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS =
+SRCS =  main.cpp ClapTrap/srcs/ClapTrap.cpp FragTrap/srcs/FragTrap.cpp\
+		srcs/DiamondTrap.cpp ScavTrap/srcs/ScavTrap.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 

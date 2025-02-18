@@ -1,7 +1,7 @@
-NAME = GlobalBanksters
-CPP = g++
+NAME = Harl_filter
+CPP = c++
 FLAGS = -Wall -Wextra -Werror
-SRCS = tests.cpp Account.cpp
+SRCS = srcs/main.cpp srcs/Harl.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 
@@ -14,11 +14,11 @@ ${NAME}: ${OBJS}
 	${CPP} ${OBJS} -o ${NAME}
 
 clean:
-	@${RM} ${OBJS} 
+	@${RM} ${OBJS}
 
 fclean: clean
 	@${RM} ${NAME}
 
 re: fclean all
 
-.PHONY: re all clean fclean
+.PHONY: re all clean fclean Harl_filter

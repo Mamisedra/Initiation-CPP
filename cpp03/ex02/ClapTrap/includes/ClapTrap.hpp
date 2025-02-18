@@ -6,15 +6,15 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:33:57 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/20 12:24:31 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:58:08 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __CLAPTRAP_HPP__
 # define __CLAPTRAP_HPP__
 
+# include <string>
 # include <iostream>
-#include <string>
 
 class	ClapTrap
 {
@@ -37,13 +37,13 @@ class	ClapTrap
 		void		takeDamage( unsigned int amount );
 		void		beRepaired( unsigned int amount );
 
-	private :
+	protected :
 
 		std::string	_name;
 		int			_point;
 		int			_energy;
 		int			_attack;
-
+		void		attackMember( std::string const & target );
 };
 
 #endif

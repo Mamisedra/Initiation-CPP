@@ -1,7 +1,7 @@
-NAME = GlobalBanksters
-CPP = g++
-FLAGS = -Wall -Wextra -Werror
-SRCS = tests.cpp Account.cpp
+NAME = sed_is_for_losers
+CPP = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = srcs/main.cpp srcs/MySed.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 
@@ -14,7 +14,7 @@ ${NAME}: ${OBJS}
 	${CPP} ${OBJS} -o ${NAME}
 
 clean:
-	@${RM} ${OBJS} 
+	@${RM} ${OBJS}
 
 fclean: clean
 	@${RM} ${NAME}

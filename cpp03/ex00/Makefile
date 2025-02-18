@@ -1,7 +1,7 @@
 NAME = Aaand..OPEN!
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS =
+SRCS = srcs/ClapTrap.cpp srcs/main.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 

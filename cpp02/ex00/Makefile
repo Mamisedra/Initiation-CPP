@@ -1,5 +1,5 @@
 NAME = firstCanon
-CPP = g++
+CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = srcs/Fixed.cpp srcs/main.cpp
 OBJS = ${SRCS:.cpp=.o}

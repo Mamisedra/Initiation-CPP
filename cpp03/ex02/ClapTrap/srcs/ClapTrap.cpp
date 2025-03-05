@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:39:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/21 13:29:36 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/05 15:34:17 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,13 @@ ClapTrap::ClapTrap( ClapTrap  const & other )
 ClapTrap&	ClapTrap::operator=( ClapTrap const & other)
 {
 	std::cout << "The ClapTrap operator affectation called" << std::endl;
-	this->_name = other._name;
-	this->_attack = other._attack;
-	this->_energy = other._energy;
-	this->_point = other._point;
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_attack = other._attack;
+		this->_energy = other._energy;
+		this->_point = other._point;
+	}
 	return (*this);
 }
 

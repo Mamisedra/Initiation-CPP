@@ -22,7 +22,7 @@ class Fixed
 	public:
 
 		Fixed( void );
-		Fixed( int nbr );
+		Fixed( const int nbr );
 		Fixed( const float nbr );
 		Fixed( const Fixed &other);
 		~Fixed( void );

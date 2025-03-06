@@ -34,12 +34,13 @@ Point::~Point( void )
 	return ;
 }
 
-Point&	Point::operator=( const Point & other)
+Point&	Point::operator=( const Point & other )
 {
-	if (_x != other._x)
-		_x = other._x;
-	if (_y != other._y)
-		_y = other._y;
+	if (this != &other)
+	{
+		const_cast<Fixed&>(this->_x) = other._x;
+		const_cast<Fixed&>(this->_y) = other._y;
+	}
 	return (*this);
 }
 

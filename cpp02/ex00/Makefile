@@ -5,7 +5,7 @@ SRCS = srcs/Fixed.cpp srcs/main.cpp
 OBJS = ${SRCS:.cpp=.o}
 RM = rm -rf
 
-%.o: %.cpp
+.cpp.o:
 	${CPP} ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
 all:${NAME}

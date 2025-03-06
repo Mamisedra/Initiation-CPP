@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:43:15 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/02/20 15:37:21 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:26:56 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,17 @@
 
 class	Fixed
 {
-
-	public	:
-
-		Fixed( void );
-		~Fixed( void );
-		Fixed( const Fixed& other );
-		Fixed &operator=(Fixed const &other);
-		int					getRawBits( void ) const;
-		void				setRawBits( int const raw );
-
 	private	:
 
 		int					_nbr;
 		static const int	_bits=8;
 
+	public	:
+		Fixed( void );
+		Fixed( const Fixed& other);
+		~Fixed( void );
+		Fixed &operator=(Fixed const &other);
+		int		getRawBits( void ) const;
+		void	setRawBits( int const raw );
 };
-
 #endif

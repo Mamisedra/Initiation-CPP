@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:30:30 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/15 16:47:50 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:21:22 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed::Fixed( const Fixed & other)
 
 Fixed&	Fixed::operator=(const Fixed & other)
 {
-	if (_nbr != other._nbr)
+	if (this != &other)
 	{
 		_nbr = other._nbr;
 	}
@@ -78,12 +78,12 @@ Fixed	Fixed::operator--( int )
 
 Fixed	Fixed::operator+( const Fixed & other ) const
 {
-	return (Fixed(_nbr + other._nbr));
+	return (Fixed(this->toFloat() + other.toFloat()));
 }
 
 Fixed	Fixed::operator-( const Fixed & other ) const
 {
-	return (Fixed(_nbr - other._nbr));
+	return (Fixed(this->toFloat() - other.toFloat()));
 }
 
 Fixed	Fixed::operator*( const Fixed & other ) const
@@ -93,7 +93,7 @@ Fixed	Fixed::operator*( const Fixed & other ) const
 
 Fixed	Fixed::operator/( const Fixed & other ) const
 {
-	return (Fixed(_nbr / other._nbr));
+	return (Fixed(this->toFloat() / other.toFloat()));
 }
 
 Fixed&	Fixed::min( Fixed &a, Fixed &b)

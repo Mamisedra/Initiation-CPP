@@ -1,5 +1,5 @@
 NAME = firstClassU
-CPP = g++
+CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = srcs/main.cpp srcs/Fixed.cpp
 OBJS = ${SRCS:.cpp=.o}

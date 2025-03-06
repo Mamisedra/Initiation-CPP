@@ -26,7 +26,7 @@ class	Fixed
 		Fixed( const float nbr );
 		Fixed( const Fixed & other );
 		~Fixed( void );
-		Fixed&			operator=( const Fixed &other) ;
+		Fixed&			operator=( const Fixed &other );
 		Fixed&			operator++( void );
 		Fixed			operator++( int );
 		Fixed&			operator--( void );
@@ -48,6 +48,7 @@ class	Fixed
 		static Fixed&	max( Fixed &a, Fixed &b);
 		static Fixed	max( const Fixed &a, const Fixed &b);
 		Fixed&			absFixed( void );
+
 	private :
 		int					_nbr;
 		const static int	_bits=8;

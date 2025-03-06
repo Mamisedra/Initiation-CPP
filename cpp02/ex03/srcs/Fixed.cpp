@@ -34,7 +34,7 @@ Fixed::Fixed( const float nbr)
 	return ;
 }
 
-Fixed::Fixed( const Fixed & other)
+Fixed::Fixed( const Fixed & other )
 {
 	*this = other;
 	return ;
@@ -42,9 +42,9 @@ Fixed::Fixed( const Fixed & other)
 
 Fixed&	Fixed::operator=(const Fixed & other)
 {
-	if (_nbr != other._nbr)
+	if (this != &other)
 	{
-		_nbr = other._nbr;
+		this->_nbr = other._nbr;
 	}
 	return (*this);
 }

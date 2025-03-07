@@ -6,21 +6,12 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 13:13:19 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/03/05 15:34:37 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 01:53:00 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap/includes/ClapTrap.hpp"
 #include "includes/FragTrap.hpp"
-
-static void	print_attribut(ClapTrap obj)
-{
-	std::cout << "Clap name : " << obj.getName()
-		<< std::endl << "Clap point : " << obj.getPoint()
-		<< std::endl << "Clap energy : " << obj.getEnergyPoint()
-		<< std::endl << "Clap attack : " << obj.getAttackDamage()
-		<< std::endl;
-}
 
 int	main( void )
 {
@@ -29,9 +20,16 @@ int	main( void )
 
 	frag.attack("Enemi");
 	clap.attack("Enemi");
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << "id = " << i << " ";
+		frag.attack("Major");
+	}
 	frag.beRepaired(10);
-	clap.takeDamage(10);
 	frag.takeDamage(100);
+	frag.takeDamage(10);
+	frag.highFivesGuys();
+	clap.takeDamage(10);
 	frag.highFivesGuys();
 	return (0);
 }

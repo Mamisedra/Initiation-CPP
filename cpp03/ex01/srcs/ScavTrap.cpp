@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:06:51 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/21 13:01:27 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/06 21:00:46 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScavTrap::ScavTrap( std::string name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap( void )
 {
-	std::cout << "ScavTrap" << getName() << "destroyed" << std::endl;
+	std::cout << "ScavTrap " << getName() << " destroyed" << std::endl;
 	return ;
 }
 

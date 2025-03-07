@@ -6,14 +6,14 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:39:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/03/05 15:06:22 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/06 20:38:09 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap( void ) : _name(""),
+ClapTrap::ClapTrap( void ) : _name("Undefined"),
 _point(10), _energy(10), _attack(0)
 {
 	std::cout << "The default ClapTrap constructor called" << std::endl;
@@ -129,7 +129,9 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	if (this->_point <= 0)
 	{
 		this->_point = 0;
-		std::cout << "ClapTrap " << this->_name << " is DEAD!"
+		std::cout << "ClapTrap " << this->_name
+			<< " has " << this->_point
+			<< " points—she's finished, she's dead!"
 		<< std::endl;
 	}
 }

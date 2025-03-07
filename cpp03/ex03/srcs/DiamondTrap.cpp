@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:27:31 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/02/28 11:48:17 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 03:26:27 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@ DiamondTrap::DiamondTrap( void )
 DiamondTrap::~DiamondTrap( void )
 {
 	std::cout << "The DiamonTrap " << this->_name
-			<< "destroyed!" << std::endl;
+			<< " destroyed!" << std::endl;
 	return ;
 }
 
-DiamondTrap::DiamondTrap( std::string const & name ) : ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap( std::string const & name )
+: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
 	this->_name = name;
 	this->_point = FragTrap::_point;
-	this->_energy = ScavTrap::_energy;
-	this->_attack = FragTrap::_attack;
+	this->_energy = 50;
+	this->_attack = 30;
 	std::cout << "DiamondTrap constructor which name:"
 		<< this->_name
 		<< " is passed as parameter Called"
@@ -51,6 +52,17 @@ DiamondTrap&	DiamondTrap::operator=( DiamondTrap const & other )
 void	DiamondTrap::attack( std::string const & target )
 {
 	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::classAttribut( void )
+{
+	std::cout << "DiamondTrap name " << this->_name << std::endl;
+	std::cout << "ClapTrap name " << ClapTrap::_name << std::endl;
+	std::cout << "FragTrap name " << FragTrap::_name << std::endl;
+	std::cout << "ScavTrap name " << ScavTrap::_name << std::endl;
+	std::cout << "ClapTrap point " << getPoint() << std::endl;
+	std::cout << "ClapTrap energy " <<  getEnergyPoint() << std::endl;
+	std::cout << "ClapTrap attack " << getAttackDamage() << std::endl;
 }
 
 void	DiamondTrap::whoAmI( void )

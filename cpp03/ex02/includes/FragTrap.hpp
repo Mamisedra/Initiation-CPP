@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:07:03 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/21 13:06:39 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 00:47:24 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ class	FragTrap : public ClapTrap
 		FragTrap( FragTrap const & other );
 		FragTrap&	operator=( FragTrap const & other );
 		void		highFivesGuys( void );
-	private :
 };
 #endif

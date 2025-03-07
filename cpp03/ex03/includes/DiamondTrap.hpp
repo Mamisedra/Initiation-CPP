@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 13:42:48 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/21 15:35:59 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 02:05:19 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap	&operator=( DiamondTrap const & other );
 		void		whoAmI( void );
 		void		attack( std::string const & target );
+		void		classAttribut( void );
 
 	private :
 

@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 13:13:19 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/03/07 01:53:00 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 10:03:00 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	main( void )
 {
 	ClapTrap	clap("Clap-killer");
 	FragTrap	frag("Frag-killer");
+	FragTrap	test;
 
+
+	test = FragTrap("Zombie");
 	frag.attack("Enemi");
 	clap.attack("Enemi");
 	for (int i = 0; i < 100; i++)

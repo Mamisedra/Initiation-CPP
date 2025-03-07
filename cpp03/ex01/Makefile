@@ -1,5 +1,5 @@
 NAME = Serena,my_love!
-CPP = g++
+CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = ClapTrap/srcs/ClapTrap.cpp srcs/ScavTrap.cpp main.cpp
 OBJS = ${SRCS:.cpp=.o}

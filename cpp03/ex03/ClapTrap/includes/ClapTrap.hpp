@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:33:57 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/21 15:09:10 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 09:42:13 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class	ClapTrap
 		int			_point;
 		int			_energy;
 		int			_attack;
-		void		attackMember( std::string const & target );
+		void		_attackMember( std::string const & target );
 };
 
 #endif

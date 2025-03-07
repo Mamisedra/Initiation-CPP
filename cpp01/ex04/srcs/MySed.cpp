@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:49:26 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/02/18 12:49:23 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:50:25 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,10 @@ void	MySed::setline( std::string line)
 void	MySed::replace( void )
 {
 	std::string	new_line = _line;
-	size_t			pos = 0;
+	size_t		pos = 0;
 
-	if (_tofind.empty()) {
+	if (_tofind.empty())
 		return ;
-	}
 	pos = _line.find(_tofind);
 	while (pos != std::string::npos)
 	{

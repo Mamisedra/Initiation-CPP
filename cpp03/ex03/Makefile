@@ -1,5 +1,5 @@
 NAME = Now_its_weird!
-CPP = g++
+CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS =  main.cpp ClapTrap/srcs/ClapTrap.cpp FragTrap/srcs/FragTrap.cpp\
 		srcs/DiamondTrap.cpp ScavTrap/srcs/ScavTrap.cpp

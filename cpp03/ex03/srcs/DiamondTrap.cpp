@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:27:31 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/03/07 03:26:27 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 09:56:11 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 DiamondTrap::DiamondTrap( void )
 {
+	ClapTrap::_name += "_clap_name";
+	this->_name = "Undefined";
+	this->_point = 100;
+	this->_energy = 50;
+	this->_attack = 30;
 	return ;
 }
 
@@ -40,12 +45,20 @@ DiamondTrap::DiamondTrap( std::string const & name )
 DiamondTrap::DiamondTrap( DiamondTrap const & other )
 : ClapTrap(other), FragTrap(other), ScavTrap(other)
 {
+	std::cout << "DiamondTrap " << this->_name
+		<< " call copy Constructor .!" << std::endl;
 	*this = other;
 }
 
 DiamondTrap&	DiamondTrap::operator=( DiamondTrap const & other )
 {
-	ClapTrap::operator=(other);
+	std::cout << "DiamondTrap " << this->_name
+		<< " use asignement operator" << std::endl;
+	if (this != &other)
+	{
+		this->_name = other._name;
+		ClapTrap::operator=(other);
+	}
 	return (*this);
 }
 

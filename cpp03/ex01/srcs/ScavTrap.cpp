@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:06:51 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/03/06 21:00:46 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 09:51:09 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 
 ScavTrap::ScavTrap( void )
 {
+	this->_name = "Undefined";
+	this->_point = 100;
+	this->_attack = 20;
+	this->_energy = 50;
 	std::cout << "ScavTrap default constructor called!" << std::endl;
 	return ;
 }
@@ -37,6 +41,8 @@ ScavTrap::~ScavTrap( void )
 
 ScavTrap&	ScavTrap::operator=( ScavTrap const &other )
 {
+	std::cout << "ScavTrap " << this->_name
+			<< " use copy asignement .!" << std::endl;
 	ClapTrap::operator=(other);
 	return (*this);
 }
@@ -50,7 +56,7 @@ ScavTrap::ScavTrap( ScavTrap const & other ) : ClapTrap(other)
 void	ScavTrap::attack( std::string target )
 {
 	std::cout << "ScavTrap " << this->_name;
-	this->attackMember(target);
+	this->_attackMember(target);
 }
 
 void	ScavTrap::guardGate( void )

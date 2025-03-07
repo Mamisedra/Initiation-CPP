@@ -6,15 +6,22 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:57:12 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/13 13:57:46 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:00:44 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Harl.hpp"
 #include <string>
 
-Harl::Harl( void ){ return; }
-Harl::~Harl (void ) { return; }
+Harl::Harl( void )
+{
+	return;
+}
+
+Harl::~Harl (void )
+{
+	return;
+ }
 
 void	Harl::debug( void )
 {

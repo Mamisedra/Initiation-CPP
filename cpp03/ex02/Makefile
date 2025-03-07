@@ -1,5 +1,5 @@
 NAME = Repetitive_work
-CPP = g++
+CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = srcs/FragTrap.cpp main.cpp ClapTrap/srcs/ClapTrap.cpp
 OBJS = ${SRCS:.cpp=.o}

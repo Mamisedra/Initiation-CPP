@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:39:50 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/03/06 20:38:09 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 07:41:37 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ClapTrap::setName( std::string const name )
 
 void	ClapTrap::attack( std::string const & target)
 {
-	if (this->_energy >= 0 && this->_point >= 0)
+	if (this->_energy > 0 && this->_point > 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " attacks "
 			<< target << ", causing " << this->_attack

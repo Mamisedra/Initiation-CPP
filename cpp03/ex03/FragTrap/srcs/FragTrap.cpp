@@ -6,7 +6,7 @@
 /*   By: mranaivo <mranaivo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:50:32 by mranaivo          #+#    #+#             */
-/*   Updated: 2025/01/21 13:29:47 by mranaivo         ###   ########.fr       */
+/*   Updated: 2025/03/07 09:50:42 by mranaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 FragTrap::FragTrap( void )
 {
+	std::cout << "FragTrap default constructor Called .!" << std::endl;
+	this->_name = "Undefined";
+	this->_point = 100;
+	this->_energy = 100;
+	this->_attack = 30;
 	return ;
 }
 
@@ -38,11 +43,15 @@ FragTrap::~FragTrap( void )
 
 FragTrap::FragTrap( FragTrap const & other ) : ClapTrap(other)
 {
+	std::cout << "FragTrap " << this->_name
+		<< "call copy constructor" << std::endl;
 	*this = other;
 }
 
 FragTrap&	FragTrap::operator=( FragTrap const & other )
 {
+	std::cout << "FragTrap " << this->_name
+		<< " use asignement operator" << std::endl;
 	ClapTrap::operator=(other);
 	return (*this);
 }
